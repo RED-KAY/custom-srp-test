@@ -1190,7 +1190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.9622642, g: 0.90086716, b: 0.73894626, a: 1}
-  cutoff: 0.507
+  cutoff: 0.5
 --- !u!135 &372168804
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4176,7 +4176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 1, g: 0.13396227, b: 0.13396227, a: 1}
-  cutoff: 0.5
+  cutoff: 0.3
 --- !u!1 &1607001528
 GameObject:
   m_ObjectHideFlags: 0

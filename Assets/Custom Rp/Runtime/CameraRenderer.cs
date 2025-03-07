@@ -4,7 +4,10 @@ using UnityEngine.Rendering;
 public partial class CameraRenderer
 {
     const string bufferName = "Render Camera";
-    static ShaderTagId unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit");
+
+    private static ShaderTagId
+        unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit"),
+        litShaderTagId = new ShaderTagId("CustomLit");
 
     ScriptableRenderContext context;
     Camera camera;
@@ -14,6 +17,8 @@ public partial class CameraRenderer
 
     CullingResults cullingResults;
 
+    private Lighting lighting = new Lighting();
+    
     public void Render(
         ScriptableRenderContext context, Camera camera,
         bool useDynamicBatching, bool useGPUInstancing
@@ -21,15 +26,16 @@ public partial class CameraRenderer
         this.context = context;
         this.camera = camera;
 
-        PrepareBuffer();
-        PrepareForSceneWindow();
+        PrepareBuffer(); // Editor
+        PrepareForSceneWindow(); // Editor
         if (!Cull())
             return;
 
         Setup();
+        lighting.Setup(context, cullingResults);
         DrawVisibleGeometry(useDynamicBatching, useGPUInstancing);
-        DrawUnsupportedShaders();
-        DrawGizmos();
+        DrawUnsupportedShaders(); // Editor
+        DrawGizmos(); // Editor
         Submit();
 
     }
@@ -67,6 +73,8 @@ public partial class CameraRenderer
 			enableDynamicBatching = useDynamicBatching,
 			enableInstancing = useGPUInstancing
 		};
+        drawingSettings.SetShaderPassName(1, litShaderTagId);
+        
         var filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
 
         RendererListParams rendererListParams = new RendererListParams { 
@@ -75,7 +83,7 @@ public partial class CameraRenderer
             cullingResults = cullingResults
         };
 
-        
+        //For all the Opaques
         RendererList rendererList = context.CreateRendererList(ref rendererListParams);
         buffer.DrawRendererList(rendererList);
 
