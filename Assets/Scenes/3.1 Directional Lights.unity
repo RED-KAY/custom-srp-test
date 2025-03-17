@@ -1302,7 +1302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &406302347
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
-  material: {fileID: 2100000, guid: e7305e07655c3e74cb376843a3c3fa96, type: 2}
+  material: {fileID: 2100000, guid: a75530dc1d879be44bad4ec6ac905549, type: 2}
 --- !u!4 &473909851
 Transform:
   m_ObjectHideFlags: 0
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  cutoff: 0
+  cutoff: 0.5
   metallic: 0
   smoothness: 0.5
 --- !u!135 &606177284
@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 1, g: 1, b: 1, a: 1}
-  cutoff: 0.5
+  cutoff: 0.57
   metallic: 0.25
   smoothness: 0.5
 --- !u!135 &617810816
@@ -3198,8 +3198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseColor: {r: 1, g: 0.31557506, b: 0, a: 1}
   cutoff: 0.5
-  metallic: 1
-  smoothness: 0.5
+  metallic: 0.21
+  smoothness: 0.442
 --- !u!1 &1017413219
 GameObject:
   m_ObjectHideFlags: 0
@@ -4582,7 +4582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1416829801
 MeshCollider:
   m_ObjectHideFlags: 0
