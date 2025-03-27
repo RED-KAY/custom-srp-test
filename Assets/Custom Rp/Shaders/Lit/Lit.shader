@@ -33,4 +33,7 @@ Shader "Custom Rp/Lit"{
             ENDHLSL
         }
     }
+    
+    CustomEditor "CustomShaderGUI"
+
 }
